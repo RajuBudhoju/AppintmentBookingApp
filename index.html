@@ -10,15 +10,18 @@
 
 <body>
     <h1>Contact List</h1>
-    <form id="addContactForm">
-        <input type="text" id="name" placeholder="Name" required>
-        <input type="email" id="email" placeholder="Email" required>
-        <button type="submit">Add Contact</button>
+    <!-- Add a form for adding/editing contacts -->
+    <form id="contactForm">
+        <input type="text" id="contactName" placeholder="Name" required>
+        <input type="email" id="contactEmail" placeholder="Email" required>
+        <button type="submit">Save Contact</button>
+        <button type="button" id="cancelEdit">Cancel</button>
     </form>
+
     <ul id="contactList">
         <!-- Contacts will be added here dynamically -->
     </ul>
-    <script src="index1.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>
