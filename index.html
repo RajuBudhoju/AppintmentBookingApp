@@ -4,24 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact List</title>
+    <title>Appintment Booking</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <h1>Contact List</h1>
-    <!-- Add a form for adding/editing contacts -->
-    <form id="contactForm">
-        <input type="text" id="contactName" placeholder="Name" required>
-        <input type="email" id="contactEmail" placeholder="Email" required>
-        <button type="submit">Save Contact</button>
-        <button type="button" id="cancelEdit">Cancel</button>
-    </form>
+    <header>
+        <h1>Appintment Booking</h1>
+    </header>
 
-    <ul id="contactList">
-        <!-- Contacts will be added here dynamically -->
-    </ul>
-    <script src="index.js"></script>
+    <main>
+        <form id="contactForm">
+            <input type="text" id="contactName" placeholder="Name" required>
+            <input type="email" id="contactEmail" placeholder="Email" required>
+
+            <button type="submit" id="saveContact">Save Contact</button>
+            <button type="button" id="cancelEdit">Cancel</button>
+        </form>
+        <div class="list">
+            <ul id="contactList">
+                <!-- Whatever writing in this doesn't work due to we make it as empty 
+            using contactList.innerHTML = "" js code -->
+                <!-- Only for undersanding i wrote here -->
+                <li>
+                    <span>Raju - buddoju@gmail.com </span>
+                    <button class="edit-button">Edit</button>
+                    <button class="delete-button">Delete</button>
+                </li>
+                <li>
+                    <span>Raju - buddoju@gmail.com </span>
+                    <button class="edit-button">Edit</button>
+                    <button class="delete-button">Delete</button>
+                </li>
+                <!-- Contacts will be added here dynamically -->
+            </ul>
+        </div>
+    </main>
+</body>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"></script>
+<script src="index.js"></script>
 </body>
 
 </html>
