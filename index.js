@@ -1,10 +1,5 @@
 // Sample Details
-const contacts = [
-    { id: 1, name: 'Sample name', email: 'sample@example.com' },
-    { id: 2, name: 'Sample another name', email: 'sample2@example.com' },
-    // ... more contacts
-];
-
+const contacts = JSON.parse(localStorage.getItem('contacts')) || [];
 // ID's
 const contactList = document.getElementById('contactList');
 const contactForm = document.getElementById('contactForm');
@@ -45,10 +40,14 @@ function handleContactSubmission(event) {
 
         renderContacts();
         cancelEdit();
+        updateLocalStorage();
     }
-    updateLocalStorage();
 }
 
+// Function to update local storage
+function updateLocalStorage() {
+    localStorage.setItem('contacts', JSON.stringify(contacts));
+}
 
 
 // Function to render contacts on the UI
@@ -118,6 +117,7 @@ function handleDeleteButtonClick(event) {
     if (index !== -1) {
         contacts.splice(index, 1);
         renderContacts();
+        updateLocalStorage();
     }
 }
 // Initial rendering
